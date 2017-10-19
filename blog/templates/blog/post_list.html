@@ -1,18 +1,67 @@
+{% load staticfiles %}
 <html>
+
     <head>
-        <title>kiwich blog</title>
+        <title>Личный блог | Kiwich</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
+            <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+            <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,cyrillic" rel="stylesheet" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet" type="text/css">
     </head>
     <body>
-<div>
-    <h1><a href="/">Django Girls Blog</a></h1>
-</div>
+    <div class="container">
+    <div class="zg">
 
-{% for post in posts %}
-    <div>
-        <p>published: {{ post.published_date }}</p>
-        <h1><a href="">{{ post.title }}</a></h1>
-        <p>{{ post.text|linebreaksbr }}</p>
+        <center><a href="index/"><div class="zgtxt">Kiwich's blog</div></a></center>
+        <center><img src="/static/11.png" alt="Пека"></center>
+        <center><a href="{% url 'post_new' %}">Добавить пост</a></center>
+        <center><a href="admin/">Админ - панель</a></center>
     </div>
-{% endfor %}
+    <div class="row">
+    <div class="col-md-3 col-sm-6">
+    {% for post in posts %}
+    <div>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <td class="tlt"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></td>
+                </tr>
+            </thead>
+        <tbody>
+        <tr>
+        <th>
+        <p><div>{{ post.text|linebreaksbr }}</div></p></th></tr>
+        </tbody>
+        <tr><td class="dt">Опубликовано: {{ post.published_date }}</td></tr>
+        <br>
+        </table>
+    </div>
+    {% endfor %}
+    </div>
+    <br>
+    <div class="col-md-3 col-sm-6 col-lg-9">
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <td class="tlt">О владельце блога</td>
+                </tr>
+            </thead>
+        <tbody>
+        <tr>
+        <td>Меня зовут Максим и я являюсь участником хакатона от СФ БГУ.<br>Этот блог - мой первый опыт работы с Python и Django.</td></tr>
+        </tbody>
+        </table>
+        </div>
+        </div>
+        </div>
+
+        <center><div class="tlt">2017</div></center>
+
+        </div>
     </body>
 </html>
