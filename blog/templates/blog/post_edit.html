@@ -5,12 +5,17 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/2.0.2/octicons.min.css">
     </head>
     <body>
-            <h1>New post</h1>
-
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
-
+        <div class="container">
+        <table class="table table-striped table-bordered">
+            <thead><tr><h1>Добавить новый пост</h1></tr></thead>
+            <tbody>
+            <tr><th><form method="POST" class="post-form">
+                {% csrf_token %}
+                {{ form.as_p }}</tr></th>
+            <tr><th><button type="submit" class="save btn btn-default">Запостить</button></tr></th>
+            </tbody>
+            </table>
+            </div>
     </form>
     </body>
 </html>

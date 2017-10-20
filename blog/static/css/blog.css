@@ -1,6 +1,6 @@
-a {
+
+a:hover {
     text-decoration: none;
-    color: #f2f2f2;
 }
 body {
     background-image: url(/static/11.jpg);
