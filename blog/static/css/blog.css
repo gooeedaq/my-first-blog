@@ -15,13 +15,13 @@ body {
 .zg {
     background-color: #5EA5BD;
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    padding: 20px 0px 20px 0px;
 }
 
 .end {
     background-color: #5EA5BD;
     margin-top: 0;
-    padding: 20px 20px 20px 20px;
+    padding: 20px 0px 20px 0px;
 }
 
 .zgtxt {
@@ -54,6 +54,12 @@ body {
     background-color:#5EA5BD;
 }
 
+.comtxt {
+    color: #000000;
+    font-size: 13pt;
+    padding:20px;
+}
+
 .dt {
     color: #595959;
     font-size: 9pt;
@@ -61,4 +67,8 @@ body {
 
 .back {
     background: url(/static/11.jpg) repeat;
+}
+
+.comment {
+    margin: 20px 0px 20px 20px;
 }
